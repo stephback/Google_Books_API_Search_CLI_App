@@ -1,7 +1,8 @@
 import json
 import requests
+import os
 
-from Apprenticeship_App.execute_program_book_finder_app import api_key
+api_key = os.environ['API_KEY']
 
 
 class BookFinder:
@@ -45,3 +46,4 @@ class BookFinder:
                 self.book_data.update()
                 i += 1
             return self.book_data
+

@@ -1,8 +1,13 @@
 import os
 import sys
-import requests
-import json
-api_key = os.environ['API_KEY']
+import book_finder
+import reading_list
+import user_input
+import user_input_params
+import print_app_results
+
+
+
 
 # Book finder application using Google Books API
 # to search for books based on user input.
@@ -26,22 +31,22 @@ class ExecuteProgram:
 
     def start_program(self):
         self.print_app_results.print_statement("Greetings! Welcome to the Google Books Search! "
-                                               "To exit the program at any time, type 'exit'.")
+                                              "To exit the program at any time, type 'exit'.")
         self.query_user()
 
     ## What happens if the user enters "hello" into command line?
     def query_user(self):
-        user_cli_input = self.user_input.get_user_cli_input()
-        if user_cli_input == 'search':
+        get_user_cli_input = self.get_user_cli_input()
+        if get_user_cli_input == 'search':
             self.search_books()
-        elif user_cli_input == 'view':
+        elif get_user_cli_input == 'view':
             self.view_reading_list()
-        elif user_cli_input == 'select':
+        elif get_user_cli_input == 'select':
             self.select_book()
-        elif user_cli_input == 'exit':
+        elif get_user_cli_input == 'exit':
             self.exit_program()
         else:
-            self.print_app_results.print_statement(
+           self.print_app_results.print_statement(
                 "Invalid option. Please choose from the following options: search, view, select, exit")
 
     def exit_program(self):
@@ -92,6 +97,9 @@ class ExecuteProgram:
             self.print_app_results.print_reading_list(reading_list)
         self.query_user()
 
-    if __name__ == '__main__':
-        executeProgram = ExecuteProgram(BookFinder(), ReadingList(), UserInput(), UserInputParams(), PrintAppResults())
-        executeProgram.start_program()
+
+if __name__ == '__main__':
+    executeProgram = ExecuteProgram(book_finder.BookFinder(), reading_list.ReadingList(),
+                        user_input.UserInput(), user_input_params.UserInputParams(), print_app_results.PrintAppResults())
+executeProgram.start_program()
+

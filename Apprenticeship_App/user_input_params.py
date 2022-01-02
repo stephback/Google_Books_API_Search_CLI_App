@@ -33,3 +33,4 @@ class UserInputParams:
             return True
         else:
             return False
+
