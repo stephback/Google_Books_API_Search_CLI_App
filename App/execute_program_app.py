@@ -2,11 +2,11 @@
 
 import sys
 
-from Apprenticeship_App.book_finder import BookFinder
-from Apprenticeship_App.print_app_results import PrintAppResults
-from Apprenticeship_App.reading_list import ReadingList
-from Apprenticeship_App.user_input import UserInput
-from Apprenticeship_App.user_input_params import UserInputParams
+from App.book_finder import BookFinder
+from App.print_app_results import PrintAppResults
+from App.reading_list import ReadingList
+from App.user_input import UserInput
+from App.user_input_params import UserInputParams
 
 
 # Book finder application using Google Books API
