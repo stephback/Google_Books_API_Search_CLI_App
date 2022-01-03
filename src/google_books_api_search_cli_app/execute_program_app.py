@@ -2,11 +2,11 @@
 
 import sys
 
-from Google_Books_API_Search_CLI_App.book_finder import BookFinder
-from Google_Books_API_Search_CLI_App.print_app_results import PrintAppResults
-from Google_Books_API_Search_CLI_App.reading_list import ReadingList
-from Google_Books_API_Search_CLI_App.user_input import UserInput
-from Google_Books_API_Search_CLI_App.user_input_params import UserInputParams
+from google_books_api_search_cli_app.book_finder import BookFinder
+from google_books_api_search_cli_app.print_app_results import PrintAppResults
+from google_books_api_search_cli_app.reading_list import ReadingList
+from google_books_api_search_cli_app.user_input import UserInput
+from google_books_api_search_cli_app.user_input_params import UserInputParams
 
 
 # Book finder application using Google Books API
