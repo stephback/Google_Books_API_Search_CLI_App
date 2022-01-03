@@ -2,8 +2,8 @@
 
 
 class PrintAppResults:
-    def __init__(self):
-        pass
+    def __init__(self, book_data={}):
+        self.book_data = book_data
 
     def print_book_data(self, book_data):
         i = 1
