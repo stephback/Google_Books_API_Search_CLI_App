@@ -80,10 +80,10 @@ class ExecuteProgram:
         selected_book = self.user_input.select_book()   #review selected_book
         if self.user_input_params.check_book_id_num_selected(
                 selected_book) and self.user_input_params.check_book_selected_book_data(selected_book):
-            self.reading_list.save_to_reading_list(selected_book, self.book_finder.book_data)
+            self.reading_list.save_reading_list(selected_book, self.book_finder.book_data)
             self.print_app_results.print_statement("Your current reading list: ")
             self.print_app_results.print_reading_list(
-                self.reading_list.reading_list)  # Missed setting my class as reading_List so calling same reading_list x2
+                self.reading_list.save_reading_list)
         else:
             self.print_app_results.print_statement(
                 "Invalid selection. Please select book id #'s 1 - 5 to select a book.")
