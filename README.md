@@ -24,6 +24,7 @@ Each result must include: title, author, publisher/company.
 
     ### **Access Python documentation:** [Here](https://docs.python.org/3/index.html)
 
+
 2. Once python is installed, clone the latest version of this project using the following command in the command line interface:
    
        git clone https://github.com/stephback/Google_Books_API_Search_CLI_App.git
