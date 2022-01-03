@@ -33,7 +33,7 @@ class UserInputParams:
             return False
 
     def check_empty_reading_list(self, save_reading_list):
-        if len(save_reading_list) == 0:
+        if save_reading_list is None:
             return True
         else:
             return False

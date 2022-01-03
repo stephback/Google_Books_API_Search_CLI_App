@@ -12,4 +12,3 @@ class ReadingList:
         book_id_num = len(self.save_reading_list) + 1
         self.save_reading_list.update({book_id_num: add_book})
 
-

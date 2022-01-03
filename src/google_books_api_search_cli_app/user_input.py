@@ -35,4 +35,3 @@ class UserInput:
                          "\n * 'exit'   - to exit the program.")
         return response_info.casefold()  # casefold() should not interfere with response?
 
-
