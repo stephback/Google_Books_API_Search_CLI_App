@@ -11,16 +11,16 @@ class UserInput:
 
     # Use .casefold() to remove case sensitivity of user input strings when compared to Google Books API search strings
     def search_by_title(self):
-        title = input("Please enter the book title. If title unavailable, please leave field blank and hit enter.")
+        title = input("Please enter the book title. If title unavailable, please enter 'N/A'.")
         return title.casefold()
 
     def search_by_genre(self):
-        genre = input("Please enter book genre. If genre does not match, please leave field blank and hit enter.")
+        genre = input("Please enter book genre. If genre does not match, please enter 'N/A'.")
         return genre.casefold()
 
     def search_by_keywords(self):
         keywords = input(
-            "Please enter keywords for book. If keyword does not match, please leave field blank and hit enter.")
+            "Please enter keywords for book. If keyword does not match, please enter 'N/A'.")
         return keywords.casefold()
 
     def select_book(self):
