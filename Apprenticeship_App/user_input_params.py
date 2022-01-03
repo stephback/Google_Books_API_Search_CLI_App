@@ -12,7 +12,7 @@ class UserInputParams:
             return False
 
     def check_valid_search(self, keywords):
-        if keywords in ['intitle', 'inauthor', 'inpublisher', 'insubject']:
+        if keywords in ["intitle", "inauthor", "inpublisher", "insubject"]:
             return True
         else:
             return False
@@ -35,5 +35,4 @@ class UserInputParams:
             return True
         else:
             return False
-
 

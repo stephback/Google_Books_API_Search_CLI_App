@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-
 import sys
+
 from Apprenticeship_App.book_finder import BookFinder
 from Apprenticeship_App.print_app_results import PrintAppResults
 from Apprenticeship_App.reading_list import ReadingList
@@ -30,20 +30,20 @@ class ExecuteProgram:
         self.print_app_results = print_app_results
 
     def start_program(self):
-        self.print_app_results.print("Greetings! Welcome to the Google Books Search! "
-                                     "To exit the program at any time, type 'exit'.")
+        self.print_app_results.print_statement("Greetings! Welcome to the Google Books Search! "
+                                               "To exit the program at any time, type 'exit'.")
         self.query_user()
 
     # What happens if the user enters "hello" into command line?
     def query_user(self):
-        query_user_input = self.query_user_input()
-        if query_user_input == 'search':
+        user_input = self.user_input.get_user_input()
+        if user_input == "search":
             self.search_books()
-        elif query_user_input == 'view':
+        elif user_input == "view":
             self.view_reading_list()
-        elif query_user_input == 'select':
+        elif user_input == "select":
             self.select_books()
-        elif query_user_input == 'exit':
+        elif user_input == "exit":
             self.exit_program()
         else:
             self.print_app_results.print_statement(
@@ -98,8 +98,8 @@ class ExecuteProgram:
         self.query_user()
 
 
-if __name__ == '__main__':
-   executeProgram = ExecuteProgram(BookFinder(), ReadingList(),
-                                   UserInput(), UserInputParams(),
+if __name__ == "__main__":
+    executeProgram = ExecuteProgram(BookFinder(), ReadingList(),
+                                    UserInput(), UserInputParams(),
                                     PrintAppResults())
 executeProgram.start_program()
