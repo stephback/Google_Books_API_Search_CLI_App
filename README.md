@@ -50,6 +50,7 @@ Each result must include: title, author, publisher/company.
   * execute_program_app.py
   * print_app_results.py
 * There are TypeError bugs present in the book_finder module due to url, api_key, and query categories consisting of strings and objects. This is causing the api connection to fail.
+  * Ideally, I would like to implement the urllib request and parse libraries to build/handle these query strings.
 * In the future, add functionality to view multiple books and save multiple books to reading list.
 * Add functionality that handles errors and user input errors better.
 
