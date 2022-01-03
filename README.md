@@ -9,14 +9,9 @@ User can select books from list to add to a new list called, "Reading List".
 
 Each result must include: title, author, publisher/company.
 
-###Why you used the technologies you used?
-
-###Challenges faced and features you hope to implement in the future?
-
-## Google Books API documentation:
+### Google Books API documentation:
  https://developers.google.com/books/docs/overview
 
-# How to install and run project:
 ##Installation:
 1. Install python and pip on your computer. To check the current version of Python installed on your computer; open your command line interface and  run the command:
 
@@ -34,9 +29,4 @@ Each result must include: title, author, publisher/company.
        git clone https://github.com/stephback/Google_Books_API_Search_CLI_App.git
 3. Locate local directory with cloned project in command line interface. Once located, run the command:
             
-## How to use project:
-provide instructions or examples (screenshots of running app)
-mention api key requirement to access Google API
 
-## Tests:
-provide code examples and how to run
