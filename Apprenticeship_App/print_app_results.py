@@ -8,9 +8,9 @@ class PrintAppResults:
     def print_book_data(self, book_data):
         i = 1
         for item in book_data:
-            print("Book id #" + str(i) + ':')
+            print("Book id #" + str(i) + ':\n')
             print("Title: " + book_data[i][0])
-            print("Authors: ")
+            print("Authors: \n")
         if type(book_data[i][1]) == list:
             for author in book_data[i][1]:
                 print(author)
@@ -24,9 +24,9 @@ class PrintAppResults:
         j = 1
 
         for item in save_reading_list:
-            print("Book id #" + str(j) + ":")
+            print("Book id #" + str(j) + ":\n")
             print("Title: " + save_reading_list[j][0])
-            print("Authors: ")
+            print("Authors: \n")
         if type(save_reading_list[j][1]) == list:
             for author in save_reading_list[j][1]:
                 print(author)
