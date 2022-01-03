@@ -8,6 +8,8 @@ class UserInputParams:
     def check_empty_search(self, response_info):
         if len(response_info) == 0 or None:
             return True
+        elif response_info[1] == ["Title not found.", "Genre not found.", "Keywords not found."]:
+            return True
         else:
             return False
 
@@ -17,15 +19,15 @@ class UserInputParams:
         else:
             return False
 
-    def check_book_id_num_selected(self, book_selected):
+    def check_book_id_num_selected(self, selected_book):
         try:
-            if type(int(book_selected)) is int:
+            if type(int(selected_book)) is int:
                 return True
         except ValueError:
             return False
 
-    def check_book_selected_in_book_data(self, book_selected):
-        if int(book_selected) in [1, 2, 3, 4, 5]:
+    def check_book_selected_in_book_data(self, selected_book):
+        if int(selected_book) in [1, 2, 3, 4, 5]:
             return True
         else:
             return False

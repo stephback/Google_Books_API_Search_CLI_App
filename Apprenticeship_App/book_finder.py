@@ -34,15 +34,15 @@ class BookFinder:
             try:
                 title = book_data["items"][i]["volumeId"]["title"]
             except:
-                title = "title not found."  # except throwing "too broad" error. How is this handled w/o disabling interpreter?
+                title = "Title not found."  # except throwing "too broad" error. How is this handled w/o disabling interpreter?
             try:
                 genre = book_data["items"][i]["volumeId"]["genre"]
             except:
-                genre = "genre not found."
+                genre = "Genre not found."
             try:
                 keywords = book_data["items"][i]["volumeId"]["keywords"]
             except:
-                keywords = "keywords not found."
+                keywords = "Keywords not found."
             else:
                 self.book_data.update({i: [title, genre, keywords]})
                 i += 1
