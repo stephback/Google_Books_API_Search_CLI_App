@@ -8,10 +8,11 @@ api_url = "https://www.googleapis.com/books/v1/volumes?q="
 api_key = os.environ.get("API_KEY")
 
 
+# This class connects to api using api_key to retrieve requested data from user input
 class BookFinder:
 
-    def __init__(self, book_data=(),
-                 response_info=()):
+    def __init__(self, book_data={},
+                 response_info={}):
         self.book_data = book_data
         self.response_info = response_info
 
@@ -30,11 +31,12 @@ class BookFinder:
 
     # Select 5 books from search results
     def select_five_books(self, book_data):
+        i = 1
         for i in range(5):
             try:
                 title = book_data["items"][i]["volumeId"]["title"]
             except:
-                title = "Title not found."  # except throwing "too broad" error. How is this handled w/o disabling interpreter?
+                title = "Title not found."
             try:
                 genre = book_data["items"][i]["volumeId"]["genre"]
             except:
@@ -43,8 +45,7 @@ class BookFinder:
                 keywords = book_data["items"][i]["volumeId"]["keywords"]
             except:
                 keywords = "Keywords not found."
-            else:
-                self.book_data.update({i: [title, genre, keywords]})
-                i += 1
-            return self.book_data
 
+            self.book_data.update({i: [title, genre, keywords]})
+            i += 1
+            return self.book_data
