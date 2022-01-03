@@ -29,7 +29,6 @@ class BookFinder:
             self.book_data = json.loads(response_info.text)
         return self.response_info
 
-
     # Select 5 books from search results
     def select_five_books(self, book_data):
         for i in range(5):

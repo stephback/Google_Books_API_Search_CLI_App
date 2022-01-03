@@ -29,10 +29,10 @@ class UserInput:
 
     def get_user_input(self):
         response_info = input("Please select from the following options: "
-                         "\n1. 'search' - to search for a book."
-                         "\n2. 'select' - to select book and add to reading list."
-                         "\n3. 'view'   - to view your current reading list."
-                         "\n4. 'exit'   - to exit the program.")
+                         "\n * 'search' - to search for a book."
+                         "\n * 'select' - to select book and add to reading list."
+                         "\n * 'view'   - to view your current reading list."
+                         "\n * 'exit'   - to exit the program.")
         return response_info.casefold()  # casefold() should not interfere with response?
 
 

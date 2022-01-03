@@ -38,7 +38,7 @@ class ExecuteProgram:
     def query_user(self):
         user_input = self.user_input.get_user_input()
         if user_input == "search":
-            self.search_books()
+            self.find_queried_books()
         elif user_input == "view":
             self.view_reading_list()
         elif user_input == "select":
@@ -48,23 +48,24 @@ class ExecuteProgram:
         else:
             self.print_app_results.print_statement(
                 "Invalid option. Please choose from the following options: search, view, select, exit")
+            self.query_user()
 
     def exit_program(self):
         self.print_app_results.print_statement("Thank you for using the Google Books Search. Have a great day!")
         sys.exit()
 
-    def search_books(self):
-        title = self.user_input.get_search_title()
-        keyword = self.user_input.get_search_keyword()
-        genre = self.user_input.get_search_genre()
+    def find_queried_books(self):
+        title = self.user_input.search_by_title()
+        keyword = self.user_input.search_by_keywords()
+        genre = self.user_input.search_by_genre()
         if title == 0:
             title = 0
         elif title != 0 and not self.user_input_params.check_valid_search(title):
             self.print_app_results.print_statement("Invalid input. Please try again.")
-            self.search_books()
+            self.find_queried_books()
         else:
-            title = self.user_input.get_search_title()
-        data = self.book_finder.search_for_books(title, genre, keyword)
+            title = self.user_input.search_title()
+        data = self.book_finder.find_queried_books(title, genre, keyword)
         book_data = self.book_finder.select_five_books(data)
         if self.user_input_params(book_data):
             self.print_app_results.print_statement("Invalid input. Please try again.")
@@ -79,7 +80,7 @@ class ExecuteProgram:
         selected_book = self.user_input.select_book()
         if self.user_input_params.check_book_id_num_selected(
                 selected_book) and self.user_input_params.check_book_selected_book_data(selected_book):
-            self.reading_list.add_to_reading_list(selected_book, self.book_finder.book_data)
+            self.reading_list.save_to_reading_list(selected_book, self.book_finder.book_data)
             self.print_app_results.print_statement("Your current reading list: ")
             self.print_app_results.print_reading_list(
                 self.reading_list.reading_list)  # Missed setting my class as reading_List so calling same reading_list x2
@@ -89,7 +90,7 @@ class ExecuteProgram:
         self.query_user()
 
     def view_reading_list(self):
-        reading_list = self.reading_list.reading_list
+        reading_list = self.reading_list
         if self.user_input_params.check_empty_reading_list(reading_list):
             self.print_app_results.print_statement("Your reading list is empty.")
         else:
@@ -103,3 +104,4 @@ if __name__ == "__main__":
                                     UserInput(), UserInputParams(),
                                     PrintAppResults())
 executeProgram.start_program()
+
