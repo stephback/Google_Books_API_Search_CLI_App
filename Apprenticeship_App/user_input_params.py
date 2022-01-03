@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 
 class UserInputParams:
     def __init__(self):
@@ -33,4 +35,5 @@ class UserInputParams:
             return True
         else:
             return False
+
 

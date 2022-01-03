@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 
 # Books queried by title, author, and publisher through user input
 class UserInput:
@@ -32,4 +34,5 @@ class UserInput:
                          "3. 'view'   - to view your current reading list."
                          "4. 'exit'   - to exit the program.")
         return response_info.casefold()  # casefold() should not interfere with response?
+
 

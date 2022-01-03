@@ -1,12 +1,12 @@
-import os
+#!/usr/bin/env python3
+
+
 import sys
-import book_finder
-import reading_list
-import user_input
-import user_input_params
-import print_app_results
-
-
+from Apprenticeship_App.book_finder import BookFinder
+from Apprenticeship_App.print_app_results import PrintAppResults
+from Apprenticeship_App.reading_list import ReadingList
+from Apprenticeship_App.user_input import UserInput
+from Apprenticeship_App.user_input_params import UserInputParams
 
 
 # Book finder application using Google Books API
@@ -30,23 +30,23 @@ class ExecuteProgram:
         self.print_app_results = print_app_results
 
     def start_program(self):
-        self.print_app_results.print_statement("Greetings! Welcome to the Google Books Search! "
-                                              "To exit the program at any time, type 'exit'.")
+        self.print_app_results.print("Greetings! Welcome to the Google Books Search! "
+                                     "To exit the program at any time, type 'exit'.")
         self.query_user()
 
-    ## What happens if the user enters "hello" into command line?
+    # What happens if the user enters "hello" into command line?
     def query_user(self):
-        get_user_cli_input = self.get_user_cli_input()
-        if get_user_cli_input == 'search':
+        query_user_input = self.query_user_input()
+        if query_user_input == 'search':
             self.search_books()
-        elif get_user_cli_input == 'view':
+        elif query_user_input == 'view':
             self.view_reading_list()
-        elif get_user_cli_input == 'select':
-            self.select_book()
-        elif get_user_cli_input == 'exit':
+        elif query_user_input == 'select':
+            self.select_books()
+        elif query_user_input == 'exit':
             self.exit_program()
         else:
-           self.print_app_results.print_statement(
+            self.print_app_results.print_statement(
                 "Invalid option. Please choose from the following options: search, view, select, exit")
 
     def exit_program(self):
@@ -99,7 +99,7 @@ class ExecuteProgram:
 
 
 if __name__ == '__main__':
-    executeProgram = ExecuteProgram(book_finder.BookFinder(), reading_list.ReadingList(),
-                        user_input.UserInput(), user_input_params.UserInputParams(), print_app_results.PrintAppResults())
+   executeProgram = ExecuteProgram(BookFinder(), ReadingList(),
+                                   UserInput(), UserInputParams(),
+                                    PrintAppResults())
 executeProgram.start_program()
-
