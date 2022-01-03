@@ -19,7 +19,7 @@ from Apprenticeship_App.user_input_params import UserInputParams
 # Google Books API documentation:
 # https://developers.google.com/books/docs/overview
 
-
+# This class connects all .py files within application and executes the program
 class ExecuteProgram:
 
     def __init__(self, book_finder, reading_list, user_input, user_input_params, print_app_results):
@@ -58,9 +58,9 @@ class ExecuteProgram:
         title = self.user_input.search_by_title()
         keyword = self.user_input.search_by_keywords()
         genre = self.user_input.search_by_genre()
-        if title == 0:
-            title = 0
-        elif title != 0 and not self.user_input_params.check_valid_search(title):
+        if title == "N/A":
+            title = "N/A"
+        elif title != "N/A" and not self.user_input_params.check_valid_search(title):
             self.print_app_results.print_statement("Invalid input. Please try again.")
             self.find_queried_books()
         else:
