@@ -77,10 +77,10 @@ class ExecuteProgram:
         if self.user_input_params.check_empty_search(self.book_finder.book_data):
             self.print_app_results.print_statement("Please search for books to add to your reading list.")
             self.query_user()
-        selected_book = self.user_input.select_book()   #review selected_book
+        book_selected = self.user_input.select_book()
         if self.user_input_params.check_book_id_num_selected(
-                selected_book) and self.user_input_params.check_book_selected_book_data(selected_book):
-            self.reading_list.save_reading_list(selected_book, self.book_finder.book_data)
+                book_selected) and self.user_input_params.check_book_selected_book_data(book_selected):
+            self.reading_list.save_reading_list(book_selected, self.book_finder.book_data)
             self.print_app_results.print_statement("Your current reading list: ")
             self.print_app_results.print_reading_list(
                 self.reading_list.save_reading_list)
