@@ -36,7 +36,7 @@ class ExecuteProgram:
 
     # What happens if the user enters "hello" into command line?
     def query_user(self):
-        user_input = self.user_input.get_user_input()
+        user_input = self.user_input.get_user_input()  # find get_user_input() method
         if user_input == "search":
             self.find_queried_books()
         elif user_input == "view":
@@ -77,7 +77,7 @@ class ExecuteProgram:
         if self.user_input_params.check_empty_search(self.book_finder.book_data):
             self.print_app_results.print_statement("Please search for books to add to your reading list.")
             self.query_user()
-        selected_book = self.user_input.select_book()
+        selected_book = self.user_input.select_book()   #review selected_book
         if self.user_input_params.check_book_id_num_selected(
                 selected_book) and self.user_input_params.check_book_selected_book_data(selected_book):
             self.reading_list.save_to_reading_list(selected_book, self.book_finder.book_data)
@@ -90,12 +90,12 @@ class ExecuteProgram:
         self.query_user()
 
     def view_reading_list(self):
-        reading_list = self.reading_list
-        if self.user_input_params.check_empty_reading_list(reading_list):
+        save_reading_list = self.reading_list.save_reading_list
+        if self.user_input_params.check_empty_reading_list(save_reading_list):
             self.print_app_results.print_statement("Your reading list is empty.")
         else:
             self.print_app_results.print_statement("Your current reading list: ")
-            self.print_app_results.print_reading_list(reading_list)
+            self.print_app_results.print_reading_list(save_reading_list)
         self.query_user()
 
 
@@ -104,4 +104,3 @@ if __name__ == "__main__":
                                     UserInput(), UserInputParams(),
                                     PrintAppResults())
 executeProgram.start_program()
-
