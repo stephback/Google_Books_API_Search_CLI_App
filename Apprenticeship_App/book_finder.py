@@ -12,7 +12,7 @@ api_key = os.environ.get("API_KEY")
 class BookFinder:
 
     def __init__(self, book_data=(),
-                 response_info=()):  # replaced book_data={} with book_data=() b/c {} is mutable and broke code.
+                 response_info=()):
         self.book_data = book_data
         self.response_info = response_info
 
