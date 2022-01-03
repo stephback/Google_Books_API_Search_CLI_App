@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import json
 import requests
 import os
@@ -18,10 +17,10 @@ class BookFinder:
 
     # Search Google Books API based on user input queries (title, genre, keywords)
     def find_queried_books(self, title, genre, keywords):
-        if len(title) == 0:
+        if title == "N/A":
             response_info = requests.get(api_url + genre + ":" + keywords + api_key)
             self.book_data = json.loads(response_info.text)
-        elif len(genre) == 0:
+        elif genre == "N/A":
             response_info = requests.get(api_url + keywords + api_key)
             self.book_data = json.loads(response_info.text)
         else:
