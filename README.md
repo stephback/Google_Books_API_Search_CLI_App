@@ -37,7 +37,7 @@ Each result must include: title, author, publisher/company.
    
        git clone https://github.com/stephback/Google_Books_API_Search_CLI_App.git
 
-3. Locate local directory with cloned project in command line interface. Once located, find the file named: 
+3. Locate the cloned project in your local directory using the command line interface. Once located, find the file named: 
 
        execute_program_app.py 
 
